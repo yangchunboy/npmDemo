@@ -6,8 +6,22 @@
 
 import { test } from './config.js';
 
-const fun = (test) => {
-	return test;
-};
+class Fun {
+	constructor() {
 
-export default fun;
+	};
+
+	async a() {
+		const promise = Promise.resolve({
+			then(resolve, reject) {
+				setTimeout(resolve, 1000, 'success');
+			}
+		});
+		const result = await promise;
+		return result;
+
+	}
+
+}
+
+export default Fun;
